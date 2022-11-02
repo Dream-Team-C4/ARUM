@@ -1,8 +1,8 @@
 import { Component } from "react";
-import '../Styles/table.css';
+import '../styles/table.css';
 
 
-var heading = [' Id Producto ', ' Nombre Producto ',' Descripcion Producto ', ' Precio ',' Stock '];
+var heading = [' Id Producto ', ' Nombre Producto ',' Descripcion Producto ', ' Precio Unitario ',' Stock '];
 
 //var body = conexion a un BD NOsq o sql o un arcgivo plano
 

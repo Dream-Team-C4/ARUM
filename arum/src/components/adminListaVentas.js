@@ -1,15 +1,14 @@
 import { Component } from "react";
 
 
-var heading = ['Id Producto', 'Nombre Producto','Descripcion Producto', 'Valor Unitario'];
+var heading = ['Id Producto', 'Nombre Producto','Descripcion Producto', 'Precio Unitario'];
 
 //var body = conexion a un BD NOsq o sql o un arcgivo plano
 
 var body =
     [
-    ['PI-0001', 'Guantes', 'Unidades dependiendo de tallas','36'],
-    ['PI-0002', 'Barrilla', 'TAmaños de 6 metros y define las pulagas','40'],
-    ['PI-0003', 'Brea','Brea sintetica por 6 kg', '56'],
+        ['PI-0001', 'Arum Fresh', 'Verduras y frutas liofilizadas, espirulina, fibra prebiótica (inulina)','50000'],
+        ['PI-0002', 'Arum Life', 'Péptidos de Colágeno, Vitaminas y minerales','80000'],
  
     ];
 
@@ -19,8 +18,8 @@ export function ListaVentas() {
     return (
         <>
             <br></br>
-            <h3>ListaVentas</h3>
-            <div >
+            <h3>VENTAS REALIZADAS</h3>
+            <div id="listaProd">
                 <Table heading={heading} body={body} />
             </div>
         </>

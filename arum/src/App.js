@@ -1,8 +1,11 @@
 import './App.css';
 
-import {SeccionHeader} from "./components/seccionHeaderPF.js";
+import {SeccionHeader} from "./components/seccionHeader.js";
 import { FormularioAgregarProductos } from "./components/adminAgregarProducto.js";
 import {ListaProductosAdmin } from "./components/adminListaProductos.js";
+import { ListaVentas } from "./components/adminListaVentas";
+import { ListaProductosCliente } from "./components/clientListaProductos";
+import { CarritoCompras} from "./components/clientCarrito";
 
 function App() {
   return (
@@ -13,6 +16,13 @@ function App() {
    <FormularioAgregarProductos/> 
    <br></br>
    <ListaProductosAdmin />
+   <br></br>
+   <ListaVentas />
+   <br></br>
+   <ListaProductosCliente />
+   <br></br>
+   <CarritoCompras />
+
    
    </>
   );

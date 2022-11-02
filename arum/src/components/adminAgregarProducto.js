@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { useState } from "react";
-import '../Styles/agregarProducto.css';
+import '../styles/agregarProducto.css';
 
 
 export function FormularioAgregarProductos(){

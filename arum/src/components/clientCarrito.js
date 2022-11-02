@@ -1,14 +1,14 @@
 import { Component } from "react";
-import '../Styles/table.css';
+import '../styles/table.css';
 
-var heading = ['Id Producto', 'Nombre Producto', 'Descripcion Producto', 'Valor Unitario'];
+var heading = ['Id Producto', 'Nombre Producto', 'Descripcion Producto', 'Precio Unitario'];
 
 //var body = conexion a un BD NOsq o sql o un arcgivo plano
 
 var body =
     [
-        ['PI-0001', 'Guantes', 'Unidades dependiendo de tallas', '3'],
-
+        ['PI-0001', 'Arum Fresh', 'Verduras y frutas liofilizadas, espirulina, fibra prebiótica (inulina)','50000'],
+       
     ];
 
 
@@ -17,7 +17,7 @@ export function CarritoCompras() {
     return (
         <>
             <div id='TablaCarrito'>
-                <h3>Lista de Compras</h3>
+                <h3>Carrito de Compras</h3>
                 <br></br>
                 <div >
                     <Table heading={heading} body={body} />

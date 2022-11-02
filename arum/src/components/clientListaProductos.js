@@ -1,5 +1,5 @@
 import { Component } from "react";
-import '../Styles/table.css';
+import '../styles/table.css';
 
 var heading = ['Id Producto', 'Nombre Producto','Descripcion Producto', 'Valor Unitario'];
 
@@ -7,9 +7,9 @@ var heading = ['Id Producto', 'Nombre Producto','Descripcion Producto', 'Valor U
 
 var body =
     [
-    ['PI-0001', 'Guantes', 'Unidades dependiendo de tallas','36'],
-    ['PI-0002', 'Barrilla', 'TAmaños de 6 metros y define las pulagas','40'],
-    ['PI-0003', 'Brea','Brea sintetica por 6 kg', '56'],
+        ['PI-0001', 'Arum Fresh', 'Verduras y frutas liofilizadas, espirulina, fibra prebiótica (inulina)','50000'],
+        ['PI-0002', 'Arum Life', 'Péptidos de Colágeno, Vitaminas y minerales','80000'],
+        ['PI-0003', 'Arum Vital','Péptidos de Colágeno, alto aporte de magnesio, vitaminas y minerales', '90000']
  
     ];
 
@@ -19,7 +19,9 @@ export function ListaProductosCliente() {
     return (
         <>
             <br></br>
-            <div >
+            <center><h2> CLIENTE</h2></center>
+            <div id="listaProdC">
+                <h3>LISTA DE PRODUCTOS </h3>
                 <Table heading={heading} body={body} />
             </div>
         </>
