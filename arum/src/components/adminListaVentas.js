@@ -3,7 +3,6 @@ import { Component } from "react";
 
 var heading = ['Id Producto', 'Nombre Producto','Descripcion Producto', 'Precio Unitario'];
 
-//var body = conexion a un BD NOsq o sql o un arcgivo plano
 
 var body =
     [

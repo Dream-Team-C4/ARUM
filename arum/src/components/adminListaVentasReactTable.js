@@ -4,7 +4,7 @@ import React from 'react';
 
 
 
-export function TablaProductos() {
+export function ListaVentasReact() {
 
 const data = React.useMemo(
     () => [
@@ -13,29 +13,14 @@ const data = React.useMemo(
         idP: 'ARUM-0001',
         nombreP: 'Arum Fresh',
         descP: 'Verduras y frutas liofilizadas, espirulina, fibra prebiótica (inulina)',
-        precioP: 50000,
-        stockP: 300
+        precioP: 50000
       },
       {
         idP: 'ARUM-0002',
         nombreP: 'Arum Life',
         descP: 'Péptidos de Colágeno, Vitaminas y minerales',
         precioP: 80000,
-        stockP: 200
-      },
-      {
-        idP: 'ARUM-0003',
-        nombreP: 'Arum Vital',
-        descP: 'Péptidos de Colágeno, alto aporte de magnesio, vitaminas y minerales',
-        precioP: 90000,
-        stockP: 500
-      },
-      {
-        idP: 'ARUM-0004',
-        nombreP: 'Arum Defense',
-        descP: 'extractos vegetales bioactivos (plantas adaptógenas), vitaminas, antioxidantes y aminoácidos',
-        precioP: 100000,
-        stockP: 100
+        
       },
     ],
     []
@@ -59,10 +44,7 @@ const data = React.useMemo(
         Header: 'Precio Unitario',
         accessor: 'precioP', // accessor is the "key" in the data
         },
-        {
-        Header: 'Stock',
-        accessor: 'stockP', // accessor is the "key" in the data
-        },
+        
 
     ],
     []

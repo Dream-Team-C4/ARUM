@@ -18,13 +18,12 @@ export function FormularioAgregarProductos(){
     <Fragment>
 
         <center>
-        <h2> ADMINISTRADOR</h2>
-        <h3>Agregar Producto</h3>
+        
         <div id="divAdd">
             
-            <label> Nombre del Producto </label>
+            <label > Nombre del Producto </label>
             <br></br>
-                <input type="text" class="form-control" id="info1" required spaonChange={(e)=>{
+                <input type="text" class="form" id="info1" required onChange={(e)=>{
                     //console.log(e.target.value);
                     setData({...data, nombreProd: e.target.value})
                 }
@@ -33,7 +32,7 @@ export function FormularioAgregarProductos(){
             <br></br>
             <label> Descripción </label>
             <br></br>
-                <input type="text" class="form-control" id="info2" onChange={(e)=>{
+                <input type="text" class="form" id="info2" onChange={(e)=>{
                     //console.log(e.target.value);
                     setData({...data, descripción: e.target.value})
                 }
@@ -44,7 +43,7 @@ export function FormularioAgregarProductos(){
             
             <label> Precio </label>
             <br></br>
-                <input type="number" class="form-control" required id="info3" onChange={(e)=>{
+                <input type="number" class="form" required id="info3" onChange={(e)=>{
                     //console.log(e.target.value);
                     setData({...data, precio: e.target.value})
                 }
@@ -56,7 +55,7 @@ export function FormularioAgregarProductos(){
             <label> Stock </label>
             <br></br>
             
-            <input type="number" class="form-control" required id="info4" onChange={(e)=>{
+            <input type="number" class="form" required id="info4" onChange={(e)=>{
                     //console.log(e.target.value);
                     setData({...data, stock: e.target.value})
                 }
@@ -64,9 +63,11 @@ export function FormularioAgregarProductos(){
             
             
             <br></br>
+            <br></br>
             
               <button onClick={VerInfo}>Validar informacion</button> 
-              <br></br>    
+              <br></br> 
+              <br></br>   
               <button onClick={CancelarInfo} >Borrar Datos</button>    
                               
         </div>

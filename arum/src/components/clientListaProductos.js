@@ -18,10 +18,9 @@ export function ListaProductosCliente() {
 
     return (
         <>
-            <br></br>
-            <center><h2> CLIENTE</h2></center>
-            <div id="listaProdC">
-                <h3>LISTA DE PRODUCTOS </h3>
+            
+            <div >
+                <h3>LISTA DE PRODUCTOS CLIENTE </h3>
                 <Table heading={heading} body={body} />
             </div>
         </>

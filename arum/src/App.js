@@ -1,30 +1,31 @@
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { SeccionHeader } from "./components/seccionHeader.js";
 
-import {SeccionHeader} from "./components/seccionHeader.js";
-import { FormularioAgregarProductos } from "./components/adminAgregarProducto.js";
-import {ListaProductosAdmin } from "./components/adminListaProductos.js";
-import { ListaVentas } from "./components/adminListaVentas";
-import { ListaProductosCliente } from "./components/clientListaProductos";
-import { CarritoCompras} from "./components/clientCarrito";
+import { Navegacion } from "./components/navigation.js";
+import { MenuNavegacion } from "./components/navMenu.js";
 
 function App() {
-  return (
-   <>
-   
-   <SeccionHeader/> 
-   <br></br>
-   <FormularioAgregarProductos/> 
-   <br></br>
-   <ListaProductosAdmin />
-   <br></br>
-   <ListaVentas />
-   <br></br>
-   <ListaProductosCliente />
-   <br></br>
-   <CarritoCompras />
 
-   
-   </>
+  const [rol] = useState('admin')
+  
+
+  return (
+    <>
+      <SeccionHeader/> 
+       
+
+      <BrowserRouter>
+
+        <MenuNavegacion rol ={rol} />
+        <Navegacion rol ={rol} />
+
+      </BrowserRouter>
+
+    </>
+
+
   );
 }
 

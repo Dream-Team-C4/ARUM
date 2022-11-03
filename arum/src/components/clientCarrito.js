@@ -7,7 +7,7 @@ var heading = ['Id Producto', 'Nombre Producto', 'Descripcion Producto', 'Precio
 
 var body =
     [
-        ['PI-0001', 'Arum Fresh', 'Verduras y frutas liofilizadas, espirulina, fibra prebiótica (inulina)','50000'],
+        ['ARUM-0001', 'Arum Fresh', 'Verduras y frutas liofilizadas, espirulina, fibra prebiótica (inulina)','50000'],
        
     ];
 
@@ -17,13 +17,15 @@ export function CarritoCompras() {
     return (
         <>
             <div id='TablaCarrito'>
-                <h3>Carrito de Compras</h3>
-                <br></br>
                 <div >
                     <Table heading={heading} body={body} />
                 </div>
                 <h4>Total de la venta: 500000</h4>
                 <button>Confirmar Compra</button>
+                <br></br>
+                <br></br>
+                <button>Cancelar Compra</button>
+                
             </div>
         </>
     );
