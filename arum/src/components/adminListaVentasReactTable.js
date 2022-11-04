@@ -6,6 +6,8 @@ import React from 'react';
 
 export function ListaVentasReact() {
 
+ 
+
 const data = React.useMemo(
     () => [
       
@@ -13,13 +15,15 @@ const data = React.useMemo(
         idP: 'ARUM-0001',
         nombreP: 'Arum Fresh',
         descP: 'Verduras y frutas liofilizadas, espirulina, fibra prebiótica (inulina)',
-        precioP: 50000
+        cantidad: 20,
+        venta: 1000000
       },
       {
         idP: 'ARUM-0002',
         nombreP: 'Arum Life',
         descP: 'Péptidos de Colágeno, Vitaminas y minerales',
-        precioP: 80000,
+        cantidad: 50,
+        venta: 4000000,
         
       },
     ],
@@ -41,8 +45,12 @@ const data = React.useMemo(
         accessor: 'descP', // accessor is the "key" in the data
         },
         {
-        Header: 'Precio Unitario',
-        accessor: 'precioP', // accessor is the "key" in the data
+          Header: 'Cantidad',
+          accessor: 'cantidad', // accessor is the "key" in the data
+          },
+        {
+        Header: 'Venta',
+        accessor: 'venta', // accessor is the "key" in the data
         },
         
 
@@ -59,6 +67,9 @@ const data = React.useMemo(
   } = useTable({ columns, data })
 
   return (
+    
+    <div>
+
     <table {...getTableProps()} style={{ border: 'solid 1px green' }}>
       <thead>
         {headerGroups.map(headerGroup => (
@@ -94,5 +105,18 @@ const data = React.useMemo(
         })}
       </tbody>
     </table>
+    <br></br>
+    <label for="story">Venta Total:</label>
+  
+      <textarea bac rows="1.4" cols="20" disabled>
+           5000000
+      </textarea>
+    
+  </div>
+    
+
+    
   )
+
+ 
 }

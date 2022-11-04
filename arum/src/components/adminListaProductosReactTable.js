@@ -1,7 +1,10 @@
 import '../styles/table.css';
 import { useTable } from 'react-table';
 import React from 'react';
-
+import dfs from '../resources/ARUM DFS PNG.png';
+import fresh from '../resources/ARUM FRESH PNG.png';
+import life from '../resources/ARUM LIFE PNG.png';
+import vital from '../resources/ARUM VITAL PNG.png';
 
 
 export function TablaProductos() {
@@ -14,28 +17,40 @@ const data = React.useMemo(
         nombreP: 'Arum Fresh',
         descP: 'Verduras y frutas liofilizadas, espirulina, fibra prebiótica (inulina)',
         precioP: 50000,
-        stockP: 300
+        stockP: 300,
+        imagen: <img class="fit-picture"
+        src={fresh}
+        alt="fresh"></img>
       },
       {
         idP: 'ARUM-0002',
         nombreP: 'Arum Life',
         descP: 'Péptidos de Colágeno, Vitaminas y minerales',
         precioP: 80000,
-        stockP: 200
+        stockP: 200,
+        imagen: <img class="fit-picture"
+        src={life}
+        alt="life"></img>
       },
       {
         idP: 'ARUM-0003',
         nombreP: 'Arum Vital',
         descP: 'Péptidos de Colágeno, alto aporte de magnesio, vitaminas y minerales',
         precioP: 90000,
-        stockP: 500
+        stockP: 500,
+        imagen: <img class="fit-picture"
+        src={vital}
+        alt="vital"></img>
       },
       {
         idP: 'ARUM-0004',
         nombreP: 'Arum Defense',
         descP: 'extractos vegetales bioactivos (plantas adaptógenas), vitaminas, antioxidantes y aminoácidos',
         precioP: 100000,
-        stockP: 100
+        stockP: 100,
+        imagen: <img class="fit-picture"
+        src={dfs}
+        alt="defense"></img>
       },
     ],
     []
@@ -56,13 +71,17 @@ const data = React.useMemo(
         accessor: 'descP', // accessor is the "key" in the data
         },
         {
-        Header: 'Precio Unitario',
+        Header: 'Precio (COP)',
         accessor: 'precioP', // accessor is the "key" in the data
         },
         {
         Header: 'Stock',
         accessor: 'stockP', // accessor is the "key" in the data
         },
+        {
+          Header: 'Imagen Producto',
+          accessor: 'imagen', // accessor is the "key" in the data
+          },
 
     ],
     []
@@ -77,7 +96,7 @@ const data = React.useMemo(
   } = useTable({ columns, data })
 
   return (
-    <table {...getTableProps()} style={{ border: 'solid 1px green' }}>
+    <table {...getTableProps()} style={{ border: 'solid 1px green', width:'1500px'  }}>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
