@@ -84,8 +84,7 @@ const data = React.useMemo(
     headerGroups,
     rows,
     prepareRow,
-    selectedFlatRows,
-    state: { selectedRowIds },
+    
   } = useTable(
     {
       columns,
@@ -120,13 +119,16 @@ const data = React.useMemo(
   // Render the UI for your table
   return (
     <>
-      <table {...getTableProps()}>
-        <thead id="columna1">
+      <table {...getTableProps()} style={{ border: 'solid 1px green' }}>
+        <thead >
           {headerGroups.map(headerGroup => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
+            <tr id="columna1" {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                <th {...column.getHeaderProps()}>{column.render('Header')}
+                
+                </th>
               ))}
+              
             </tr>
           ))}
         </thead>
@@ -143,21 +145,16 @@ const data = React.useMemo(
           })}
         </tbody>
       </table>
-      <p>Selected Rows: {Object.keys(selectedRowIds).length}</p>
-      <pre>
-        <code>
-          {JSON.stringify(
-            {
-              selectedRowIds: selectedRowIds,
-              'selectedFlatRows[].original': selectedFlatRows.map(
-                d => d.original
-              ),
-            },
-            null,
-            2
-          )}
-        </code>
-      </pre>
-    </>
-  )
+      <div>
+        <button onClick={agregarCarrito}>Agregar al carrito</button>
+      </div>
+
+    
+      </>
+      
+
+  );
+  function agregarCarrito() {
+    alert("Productos Agregados");
+  }
 }
