@@ -18,7 +18,9 @@ export const MenuNavegacion = ({ rol }) => {
       <div className="collapse navbar-collapse" id="navbarNav">
         {rol === "admin" ? (
           <ul className="navbar-nav">
-            
+            <li className="nav-item active">
+              <Link className="nav-link" to={"/"}>Login</Link>
+            </li>
             <li className="nav-item">
               <Link className="nav-link" to={"/AgregarProductos"}>Crear Nuevos productos
               </Link>
@@ -32,17 +34,15 @@ export const MenuNavegacion = ({ rol }) => {
               <Link className="nav-link" to={"/ListaVentasAdmin"}>Lista de ventas
               </Link>
             </li>
-            <li className="nav-item">
-                <Link className="nav-link" to={"/ListaProductosCliente"}>Productos Cliente</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to={"/CarritoCompras"}>Carrito de Compras
-              </Link>
-            </li>
+            
+            
             
           </ul>
         ) : (
           <ul className="navbar-nav">
+            <li className="nav-item active">
+              <Link className="nav-link" to={"/"}>Login</Link>
+            </li>
             <li className="nav-item">
                 <Link className="nav-link" to={"/ListaProductosCliente"}>Productos Cliente</Link>
             </li>

@@ -9,7 +9,8 @@ export function FormularioAgregarProductos(){
         nombreProd : "",
         descripcion : "",
         precio : 0,
-        stock : 0
+        stock : 0,
+        img : ""
     }
     )
 
@@ -60,9 +61,23 @@ export function FormularioAgregarProductos(){
                     setData({...data, stock: e.target.value})
                 }
                 }></input>
-            
+
+                 
+            <br></br>
+
             
             <br></br>
+            
+            <input type="image" title="Agregar Imagen" alt="Agregar Imagen" id="image"  onChange={(e)=>{
+                    //console.log(e.target.value);
+                    setData({...data, img: e.target.value})
+                }
+                }></input>
+
+                 
+            <br></br>
+
+
             <br></br>
             
               <button onClick={VerInfo}>Validar informacion</button> 

@@ -5,6 +5,7 @@ import { SeccionHeader } from "./components/seccionHeader.js";
 
 import { Navegacion } from "./components/navigation.js";
 import { MenuNavegacion } from "./components/navMenu.js";
+import { Login } from "./components/login";
 
 function App() {
 

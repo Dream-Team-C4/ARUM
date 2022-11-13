@@ -1,0 +1,102 @@
+[
+	{
+		"user": "Mona Porter",
+		"pass": "BES99QMA6XQ",
+		"rol": "admin"
+	},
+	{
+		"user": "Cheyenne Clayton",
+		"pass": "UJD06TIW8DO",
+		"rol": "admin"
+	},
+	{
+		"user": "Valentine Davenport",
+		"pass": "UKQ64VFS3DW",
+		"rol": "admin"
+	},
+	{
+		"user": "Brittany Melendez",
+		"pass": "MKI80GKP2TA",
+		"rol": "admin"
+	},
+	{
+		"user": "Darrel Hughes",
+		"pass": "GRZ66LMR6GN",
+		"rol": "admin"
+	},
+	{
+		"user": "Adria Acevedo",
+		"pass": "JJR41EQO3XB",
+		"rol": "client"
+	},
+	{
+		"user": "Lucian Ross",
+		"pass": "FOB55CGV1BY",
+		"rol": "admin"
+	},
+	{
+		"user": "Yeo Cox",
+		"pass": "WJB59PNU7WC",
+		"rol": "client"
+	},
+	{
+		"user": "Leilani Peck",
+		"pass": "TYU32OQP1LG",
+		"rol": "admin"
+	},
+	{
+		"user": "Sarah Haynes",
+		"pass": "RKV54HWX3QV",
+		"rol": "admin"
+	},
+	{
+		"user": "Branden Nash",
+		"pass": "LCH03AWO1QM",
+		"rol": "admin"
+	},
+	{
+		"user": "Ora Daniel",
+		"pass": "SGX02ATC1RU",
+		"rol": "admin"
+	},
+	{
+		"user": "Chancellor Daugherty",
+		"pass": "JUR25ZNI7HF",
+		"rol": "admin"
+	},
+	{
+		"user": "McKenzie Hogan",
+		"pass": "DAG74XML1TH",
+		"rol": "client"
+	},
+	{
+		"user": "Wallace Lowery",
+		"pass": "BFJ63TPH2JY",
+		"rol": "admin"
+	},
+	{
+		"user": "Drew Mcintyre",
+		"pass": "MYY51UUC6TO",
+		"rol": "client"
+	},
+	{
+		"user": "Colton Boyd",
+		"pass": "IYG16SKZ7NU",
+		"rol": "admin"
+	},
+	{
+		"user": "Samantha Atkins",
+		"pass": "DJG33QJI3WO",
+		"rol": "admin"
+	},
+	{
+		"user": "Bert Rose",
+		"pass": "ERR28PBH5OT",
+		"rol": "client"
+	},
+	{
+		"user": "Karly Bryant",
+		"pass": "QWF16ZKH2LH",
+		"rol": "admin"
+	}
+]
