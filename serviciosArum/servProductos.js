@@ -9,6 +9,7 @@ const express = require('express');
 
 const port = 5000;
 const app = express();
+app.set('json spaces', 2)
 
 //Llamada Esquemas
 
@@ -45,10 +46,10 @@ app.post('/Productos/Agregar', (req, res) =>{
 
     productsSchema.create({
         id: "ARUM-009",
-        nombre: "Arum Premium 5",
-        desc: "Colageno con hidrogeno vitalizado potenciado",
-        precio: "160000",
-        stock: "250",
+        nombre: "Arum Premium 6",
+        desc: "Colageno con hidrogeno vitalizado potenciado ULTRA",
+        precio: "180000",
+        stock: "350",
         imagen: "https://arumofficial.com/wp-content/uploads/2022/07/MOKUP-2-Recovered12.png"
 
     },
@@ -67,9 +68,9 @@ app.put('/Productos/modificar', (req,res) => {
     productsSchema.updateOne({id:"ARUM-001"}, {
         
         nombre: "Arum Nature",
-        desc: "Colageno Nativo",
-        precio: "75000",
-        stock: "100",
+        descripcion: "Colageno Nativo power",
+        precio: "90000",
+        stock: "200",
         imagen: "https://i0.wp.com/gbq.com.co/wp-content/uploads/2021/06/ARUM-FRESH-CAJA-X-21-SOBRES.jpg?fit=503%2C504&ssl=1",
     },
         function(err, productsSchema) {
@@ -87,7 +88,7 @@ app.put('/Productos/modificar', (req,res) => {
 
 //modificar las unidades de los productos
 app.put('/Productos/modStock', (req,res) => {
-    productsSchema.updateOne({id:"ARUM-001"}, {stock:"1000"},function(err, productsSchema) {
+    productsSchema.updateOne({id:"ARUM-002"}, {stock:"2000"},function(err, productsSchema) {
         if (err) return console.err(err);
         console.log(productsSchema);
     });
