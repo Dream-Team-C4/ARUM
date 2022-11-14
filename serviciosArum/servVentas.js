@@ -28,20 +28,12 @@ app.listen(port, ()=>{
     
     });
 
-// Listar los productos con stock disponible - rol Admin
+//Listar las ventas - rol admin
 
+//Saber el valor total de la compra - rol cliente
 
-app.get('/Ventas/ListarProductos', (req, res)=>{
+// Confirmar la compra del carrito - rol cliente
 
-    productsSchema.find({stock:{$gte:1}},function (err, productsSchema){
-        if (err) return console.err(err);
-        res.send(productsSchema);
-
-    });
-
-})
-
-//Añadir productos al carrito
 
 
 

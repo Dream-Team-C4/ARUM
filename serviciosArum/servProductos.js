@@ -62,15 +62,15 @@ app.post('/Productos/Agregar', (req, res) =>{
 
 })
 
-//Modificar el producto
+//Modificar el producto - rol admin
 
 app.put('/Productos/modificar', (req,res) => {
-    productsSchema.updateOne({id:"ARUM-001"}, {
+    productsSchema.updateOne({id:"ARUM-012"}, {
         
-        nombre: "Arum Nature",
-        descripcion: "Colageno Nativo power",
-        precio: "90000",
-        stock: "200",
+        nombre: "Arum Jungle",
+        desc: "Colageno Nativo animal",
+        precio: "100000",
+        stock: "250",
         imagen: "https://i0.wp.com/gbq.com.co/wp-content/uploads/2021/06/ARUM-FRESH-CAJA-X-21-SOBRES.jpg?fit=503%2C504&ssl=1",
     },
         function(err, productsSchema) {
@@ -88,7 +88,7 @@ app.put('/Productos/modificar', (req,res) => {
 
 //modificar las unidades de los productos
 app.put('/Productos/modStock', (req,res) => {
-    productsSchema.updateOne({id:"ARUM-002"}, {stock:"2000"},function(err, productsSchema) {
+    productsSchema.updateOne({id:"ARUM-010"}, {stock:"2000"},function(err, productsSchema) {
         if (err) return console.err(err);
         console.log(productsSchema);
     });
@@ -97,7 +97,24 @@ app.put('/Productos/modStock', (req,res) => {
     });
 
 
-//Listar las ventas
+// Listar los productos con stock disponible - rol Cliente
+
+
+app.get('/Productos/ListarProdStock', (req, res)=>{
+
+    productsSchema.find({stock:{$gte:1}},function (err, productsSchema){
+        if (err) return console.err(err);
+        res.send(productsSchema);
+
+    });
+
+})
+
+//Añadir productos al carrito - rol cliente
+
+
+
+
 
 
 
