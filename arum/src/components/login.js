@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { useState } from "react";
 import JsonData from "../data/UserData.json";
 
-import '../styles/Login.css';
+import '../Styles/Login.css';
 
 export function Login() {
 

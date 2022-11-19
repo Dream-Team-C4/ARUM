@@ -1,7 +1,7 @@
  //Componente sencillo
  //integra css
 
- import '../styles/header.css';
+ import '../Styles/header.css';
  import imagen from '../resources/logo.png';
  
  export function SeccionHeader() {

@@ -1,4 +1,4 @@
-import '../styles/table.css';
+import '../Styles/table.css';
 import { useTable } from 'react-table';
 import React from 'react';
 
