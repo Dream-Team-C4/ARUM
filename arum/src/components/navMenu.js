@@ -34,7 +34,13 @@ export const MenuNavegacion = ({ rol }) => {
               <Link className="nav-link" to={"/ListaVentasAdmin"}>Lista de ventas
               </Link>
             </li>
-            
+            <li className="nav-item">
+                <Link className="nav-link" to={"/ListaProductosCliente"}>Productos Cliente</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to={"/CarritoCompras"}>Carrito de Compras
+              </Link>
+            </li>
             
             
           </ul>

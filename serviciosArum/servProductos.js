@@ -3,17 +3,22 @@
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const express = require('express');
+const CORS = require('Cors');
 
 
 //constantes para usar express
 
 const port = 5000;
 const app = express();
+app.use(CORS());
+app.use(express.json());
 app.set('json spaces', 2)
 
 //Llamada Esquemas
 
 const productsSchema = require('./model/productos.js');
+const productos = require('./model/productos.js');
+const {updateOne} = require('./model/productos.js');
 
 //Llamada Base de Datos
 
@@ -44,23 +49,20 @@ app.get('/Productos/Listar', (req, res)=>{
 
 app.post('/Productos/Agregar', (req, res) =>{
 
-    productsSchema.create({
-        id: "ARUM-009",
-        nombre: "Arum Premium 6",
-        desc: "Colageno con hidrogeno vitalizado potenciado ULTRA",
-        precio: "180000",
-        stock: "350",
-        imagen: "https://arumofficial.com/wp-content/uploads/2022/07/MOKUP-2-Recovered12.png"
+    productoNuevo = new productos(req.body)
+    //productsSchema.find({id:productoNuevo.id},function(productsSchema){
+    
+       // res.send("Producto ya existe")
+    
+    //});
 
-    },
-    function(err){
-        if (err) return console.err(err);
-     res.send(200)
+    productsSchema.create(productoNuevo)
+    res.send("Producto Agregado")
 
-    });
-
-
+       
+    
 })
+
 
 //Modificar el producto - rol admin
 
