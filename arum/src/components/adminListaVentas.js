@@ -16,6 +16,7 @@ export function ListaVentas() {
 
     return (
         <>
+        <div><MenuAdmin/></div>
             <br></br>
             <h3>VENTAS REALIZADAS</h3>
             <div id="listaProd">

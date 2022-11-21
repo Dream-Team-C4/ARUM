@@ -1,5 +1,7 @@
 import { Component } from "react";
 import '../Styles/table.css';
+import { MenuClient } from "../components/navMenuClient.js";
+
 
 var heading = ['Id Producto', 'Nombre Producto', 'Descripcion Producto', 'Precio Unitario'];
 
@@ -16,17 +18,21 @@ export function CarritoCompras() {
 
     return (
         <>
+        <div><MenuClient/></div>
+        <center>
             <div id='TablaCarrito'>
+                
                 <div >
                     <Table heading={heading} body={body} />
                 </div>
                 <h4>Total de la venta: 500000</h4>
-                <button>Confirmar Compra</button>
+                <button >Confirmar Compra</button>
                 <br></br>
                 <br></br>
                 <button>Cancelar Compra</button>
                 
             </div>
+            </center>
         </>
     );
 

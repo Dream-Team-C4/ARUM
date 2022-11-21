@@ -11,10 +11,13 @@ import { TablaProductos } from "../components/adminListaProductosReactTable";
 import { ListaVentasReact } from "../components/adminListaVentasReactTable";
 
 
-
+const rol = Login.rol
 
 export const Navegacion = ({ rol }) => {
   return (
+
+    
+
     <Routes>
       {rol === "admin" ? (
         <Fragment>
@@ -27,7 +30,7 @@ export const Navegacion = ({ rol }) => {
 
           
         </Fragment>
-      ) : (
+      ) : rol === "client" (
         <Fragment>
           <Route path="/" element={< Login />} />
           <Route path="/ListaProductosCliente" element={< ListaProductosClienteReact />} />

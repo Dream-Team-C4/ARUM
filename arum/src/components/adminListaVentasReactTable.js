@@ -1,6 +1,8 @@
 import '../Styles/table.css';
 import { useTable } from 'react-table';
 import React from 'react';
+import { MenuAdmin } from "../components/navMenuAdmin.js";
+import { SeccionHeader } from "../components/seccionHeader";
 
 
 
@@ -68,8 +70,9 @@ const data = React.useMemo(
 
   return (
     
-    <div>
-
+    <div className="container mt-5" align="center">
+    <SeccionHeader/>
+      <div><MenuAdmin/></div>
     <table {...getTableProps()} style={{ border: 'solid 1px green' }}>
       <thead>
         {headerGroups.map(headerGroup => (

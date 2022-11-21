@@ -1,9 +1,11 @@
 import { Fragment } from "react";
 import { useState } from "react";
 import '../Styles/agregarProducto.css';
+import { MenuAdmin } from "../components/navMenuAdmin.js";
+import { SeccionHeader } from "../components/seccionHeader";
 
 
-export function FormularioAgregarProductos(){
+export function AgregarProductos(){
 
     const [data,setData] = useState({
         
@@ -12,7 +14,7 @@ export function FormularioAgregarProductos(){
         desc : "",
         precio : "",
         stock : "",
-        img : ""
+        img : "https://i0.wp.com/gbq.com.co/wp-content/uploads/2021/06/ARUM-FRESH-CAJA-X-21-SOBRES.jpg?fit=503%2C504&ssl=1"
     }
     )
 
@@ -20,10 +22,13 @@ export function FormularioAgregarProductos(){
 
     <Fragment>
 
+    <div className="container mt-5" align="center">
+    <SeccionHeader/>
+        <div><MenuAdmin/></div>
         <center>
         
         <div id="divAdd">
-            
+        
             <label > ID del Producto </label>
             
                 <input type="number" class="form" id="info1" required onChange={(e)=>{
@@ -37,7 +42,7 @@ export function FormularioAgregarProductos(){
 
             <label > Nombre del Producto </label>
             
-                <input type="text" class="form" id="info1" required onChange={(e)=>{
+                <input type="text" class="form" id="info2" required onChange={(e)=>{
                     //console.log(e.target.value);
                     setData({...data, nombre: e.target.value})
                 }
@@ -47,7 +52,7 @@ export function FormularioAgregarProductos(){
             <br></br>
             <label> Descripción </label>
             
-                <input type="text" class="form" id="info2" onChange={(e)=>{
+                <input type="text" class="form" id="info3" onChange={(e)=>{
                     //console.log(e.target.value);
                     setData({...data, desc: e.target.value})
                 }
@@ -58,7 +63,7 @@ export function FormularioAgregarProductos(){
             <br></br>
             <label> Precio </label>
             
-                <input type="number" class="form" required id="info3" onChange={(e)=>{
+                <input type="number" class="form" required id="info4" onChange={(e)=>{
                     //console.log(e.target.value);
                     setData({...data, precio: e.target.value})
                 }
@@ -70,7 +75,7 @@ export function FormularioAgregarProductos(){
             
             <label> Stock </label>
                         
-            <input type="number" class="form" required id="info4" onChange={(e)=>{
+            <input type="number" class="form" required id="info5" onChange={(e)=>{
                     //console.log(e.target.value);
                     setData({...data, stock: e.target.value})
                 }
@@ -82,8 +87,8 @@ export function FormularioAgregarProductos(){
             
             <br></br>
             
-            <input type="image" title="Agregar Imagen" alt="Agregar Imagen" id="image"  onChange={(e)=>{
-                    //console.log(e.target.value);
+            <input type="file" title="Agregar Imagen" alt="Agregar Imagen" id="image"  onChange={(e)=>{
+                    console.log(e.target.value);
                     setData({...data, img: e.target.value})
                 }
                 }></input>
@@ -94,7 +99,7 @@ export function FormularioAgregarProductos(){
 
             <br></br>
             
-              <button onClick={VerInfo}>Validar informacion</button> 
+              <button onClick={CrearProducto}>Agregar</button> 
               <br></br> 
               <br></br>   
               <button onClick={CancelarInfo} >Borrar Datos</button>    
@@ -103,33 +108,31 @@ export function FormularioAgregarProductos(){
 
         </center>
 
-        
+        </div>
     </Fragment>
 
+
     );
-     function VerInfo() {
-        alert("Producto Agregado: " + data.nombreProd);
-
-        /*var emailMongo = "mauricio@gmail.com";
-        var ccMongo = 8101673;
-
-        // eslint-disable-next-line 
-        if (emailMongo === data.email && ccMongo == data.docIdentidad) {
-
-            alert ("Usuario ingresado correcto")
-        } else {
-            alert("Por favor verifique los datos")
-        }
-
+     function CrearProducto() {
        
-
-        /*Comparación con datos de BD
-
-        func(data.email, data.docIdentidad){
-            datos de mongo
-            if email fomr == email Mongo
+        
+            const datosJSON = JSON.stringify(data)       
+            
+    
+            fetch("http://localhost:5000/Productos/Agregar", {
+                method: "POST",
+                body: datosJSON,
+                headers: {
+                    "Content-Type": "application/json",
+                },
+    
+            })
+    
+            //Comprobacion  de los datos
+            
+            alert("Datos almacenados correctamente")
+          
         }
-        */
     }
 
     function CancelarInfo() {
@@ -141,6 +144,8 @@ export function FormularioAgregarProductos(){
         document.getElementById("info2").value =""; 
         document.getElementById("info3").value =""; 
         document.getElementById("info4").value =""; 
+        document.getElementById("info5").value =""; 
+        document.getElementById("image").value =""; 
 
     }
        
@@ -152,4 +157,3 @@ export function FormularioAgregarProductos(){
 
 
 
-}

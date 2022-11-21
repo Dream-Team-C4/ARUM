@@ -1,6 +1,7 @@
 import '../Styles/table.css';
 import { useTable, useRowSelect } from 'react-table';
 import React from 'react';
+import { MenuClient } from "../components/navMenuClient.js";
 
 
 
@@ -119,6 +120,10 @@ const data = React.useMemo(
   // Render the UI for your table
   return (
     <>
+    <div><MenuClient/></div>
+
+      <center>
+   
       <table {...getTableProps()} style={{ border: 'solid 1px green' }}>
         <thead >
           {headerGroups.map(headerGroup => (
@@ -145,10 +150,12 @@ const data = React.useMemo(
           })}
         </tbody>
       </table>
+      <br></br>
       <div>
         <button onClick={agregarCarrito}>Agregar al carrito</button>
+      
       </div>
-
+      </center>
     
       </>
       

@@ -1,6 +1,8 @@
 import { Fragment } from "react";
 import { useState } from "react";
 import '../Styles/agregarProducto.css';
+import { MenuAdmin } from "../components/navMenuAdmin.js";
+import { SeccionHeader } from "../components/seccionHeader";
 
 
 export function FormularioAgregarProductos(){
@@ -18,10 +20,11 @@ export function FormularioAgregarProductos(){
 
     <Fragment>
 
+        <SeccionHeader/>
         <center>
         
         <div id="divAdd">
-            
+        <div><MenuAdmin/></div>
             <label > Nombre del Producto </label>
             <br></br>
                 <input type="text" class="form" id="info1" required onChange={(e)=>{

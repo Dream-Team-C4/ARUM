@@ -5,9 +5,14 @@ import dfs from '../resources/ARUM DFS PNG.png';
 import fresh from '../resources/ARUM FRESH PNG.png';
 import life from '../resources/ARUM LIFE PNG.png';
 import vital from '../resources/ARUM VITAL PNG.png';
+import { MenuAdmin } from "../components/navMenuAdmin.js";
+import { SeccionHeader } from "../components/seccionHeader";
 
 
 export function TablaProductos() {
+
+  
+
 
 const data = React.useMemo(
     () => [
@@ -55,7 +60,7 @@ const data = React.useMemo(
     ],
     []
   )
-    
+  
   const columns = React.useMemo(
     () => [
       {
@@ -95,8 +100,16 @@ const data = React.useMemo(
     prepareRow,
   } = useTable({ columns, data })
 
+  
   return (
+    <>
+    <div><SeccionHeader/></div>
+    <div><MenuAdmin/></div>
+    <div className="container mt-5" align="center">
+      
+      
     <table {...getTableProps()} style={{ border: 'solid 1px green', width:'1500px'  }}>
+      
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -131,5 +144,8 @@ const data = React.useMemo(
         })}
       </tbody>
     </table>
+  </div>
+
+  </>
   )
 }

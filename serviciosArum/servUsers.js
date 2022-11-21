@@ -3,16 +3,21 @@
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const express = require('express');
-
+const CORS = require('Cors');
 
 //constantes para usar express
 
-const port = 5000;
+const port = 5001;
 const app = express();
+app.use(CORS());
+app.use(express.json());
+app.set('json spaces', 2)
 
 //Llamada Esquemas
 
 const userSchema = require('./model/users.js');
+const users = require('./model/users.js');
+const updateone = require('./model/users.js');
 
 //Llamada Base de Datos
 
@@ -44,17 +49,11 @@ app.get('/Usuarios/Listar', (req, res)=>{
 
 app.post('/Usuarios/Agregar', (req, res) =>{
 
-    userSchema.create({
-        user: "Ger",
-        pass: "647474",
-        rol: "admin"
+    userNuevo = new users(req.body)
+    
 
-    },
-    function(err){
-        if (err) return console.err(err);
-     res.send("Usuario Agregado")
-
-    });
+    userSchema.create(userNuevo)
+    res.send("Usuario Agregado")
 
 
 })

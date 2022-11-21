@@ -50,12 +50,6 @@ app.get('/Productos/Listar', (req, res)=>{
 app.post('/Productos/Agregar', (req, res) =>{
 
     productoNuevo = new productos(req.body)
-    //productsSchema.find({id:productoNuevo.id},function(productsSchema){
-    
-       // res.send("Producto ya existe")
-    
-    //});
-
     productsSchema.create(productoNuevo)
     res.send("Producto Agregado")
 
@@ -66,15 +60,9 @@ app.post('/Productos/Agregar', (req, res) =>{
 
 //Modificar el producto - rol admin
 
-app.put('/Productos/modificar', (req,res) => {
-    productsSchema.updateOne({id:"ARUM-012"}, {
-        
-        nombre: "Arum Jungle",
-        desc: "Colageno Nativo animal",
-        precio: "100000",
-        stock: "250",
-        imagen: "https://i0.wp.com/gbq.com.co/wp-content/uploads/2021/06/ARUM-FRESH-CAJA-X-21-SOBRES.jpg?fit=503%2C504&ssl=1",
-    },
+app.put('/Productos/Modificar/:id', (req,res) => {
+    const { id, nombre, desc, precio, stock, imagen } = req.body
+    productsSchema.updateOne({id:"id"}, {nombre, desc, precio, stock, imagen},
         function(err, productsSchema) {
     
         if (err) return console.err(err);
